@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&family=Bebas+Neue&family=Bodoni+Moda:opsz@6..96&family=Caprasimo&family=Chakra+Petch:wght@300&family=Cormorant:wght@300&family=Inclusive+Sans&family=Lobster&family=Lobster+Two&family=Open+Sans:wght@300;500;700&family=Outfit:wght@300;400;600&family=Poppins:wght@100;400&family=Roboto+Slab:wght@100&family=Roboto:wght@100;400&family=Silkscreen&family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  --color-offWhite: #faf1e4;
+  --color-white: #fff;
+  --color-black: #000;
+  /* --color-gray-light: #808080a9; */
+  --color-gray-light: #80808062;
+  --color-green-limon: #59eb59;
+  --color-green-dark: #022917;
+  --color-red-light: #e41111a1;
+
+  --color-green-btnCheck: #022917d8;
+  --color-green-btnDelete: #ff0000be;
+
+  --font-bebas-neue: "Bebas Neue";
+  --font-open-sans: "Open Sans";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("/src/img/task-medio.jpg") no-repeat center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  width: 30rem;
+  background-color: var(--color-gray-light);
+  border-radius: 0.5rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container input {
+  width: 20rem;
+  height: 2.5rem;
+  padding: 10px;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+
+  font-size: 1rem;
+  font-family: var(--font-open-sans);
+}
+
+.container input:focus {
+  border: 2px solid var(--color-green-dark);
+}
+
+.inputTask.erro {
+  border: 2px solid var(--color-red-light);
+}
+
+.container button {
+  width: 5.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: var(--color-green-dark);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-family: var(--font-open-sans);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.container button:hover {
+  background-color: var(--color-green-limon);
+  color: var(--color-black);
+}
+
+.tarefas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style-type: none;
+  border-radius: 0.5rem;
+}
+
+.task {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  box-shadow: 2px 4px 10px rgba(17, 3, 3, 0.2);
+  padding-inline: 1rem;
+}
+
+.check {
+  font-size: 1.5rem;
+  color: var(--color-green-btnCheck);
+  cursor: pointer;
+}
+
+.checked {
+  background-color: var(--color-green-limon);
+  text-decoration: line-through;
+}
+
+.task p {
+  font-size: 1.3rem;
+  font-family: var(--font-bebas-neue);
+}
+
+.delete {
+  font-size: 1.5rem;
+  color: var(--color-green-btnDelete);
+  cursor: pointer;
+}
+
+.task i {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.task:hover i {
+  opacity: 1;
+}
