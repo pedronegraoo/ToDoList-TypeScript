@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/reponsive.css" />
+
+    <script src="src/dist/index.js" defer></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/img/caderno.png"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="container">
+        <input
+          type="text"
+          name=""
+          placeholder="Digite sua tarefa..."
+          class="inputTask"
+          autofocus
+        />
+        <button id="btn-task">Adicionar</button>
+      </div>
+
+      <ul class="tarefas"></ul>
+    </div>
+  </body>
+</html>
