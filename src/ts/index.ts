@@ -15,13 +15,14 @@ document.addEventListener("keypress", function (event) {
   }
 });
 
-function getValueInput() {
+function getValueInput(): void {
   if (inputTask.value === "") {
     alert("Preencha o campo.");
     inputTask.classList.add("erro");
   } else if (validateDuoTask(store)) {
     alert(`Já existe essa tarefa`);
     inputTask.value = "";
+    inputTask.focus();
   } else {
     let tasks: ILista = {
       li: inputTask.value,
@@ -31,6 +32,7 @@ function getValueInput() {
 
     addTask(store);
     inputTask.value = "";
+    inputTask.focus();
   }
 }
 
@@ -39,13 +41,14 @@ inputTask.addEventListener("click", () => {
 });
 
 // VALIDANDO TASK REPETIDA
-function validateDuoTask(store: ILista[]) {
+function validateDuoTask(store: ILista[]): boolean {
   let find = store.find((element) => element.li === inputTask.value);
 
   return find ? true : false;
 }
 
-function addTask(store: ILista[]) {
+// ADICIONAR TAREFA NA TELA
+function addTask(store: ILista[]): void {
   let task: string = "";
 
   store.forEach((item, index) => {
@@ -63,18 +66,18 @@ function addTask(store: ILista[]) {
 }
 
 // FUNÇÃO PARA TAREFA CONCLUIDA
-function checkedTask(position: number) {
+function checkedTask(position: number): void {
   store[position].checked = !store[position].checked;
   addTask(store);
 }
 
 // FUNÇÃO EXCLUIR TAREFA
-function removeTask(position: number) {
+function removeTask(position: number): void {
   store.splice(position, 1);
   addTask(store);
 }
 
-function realodProgram() {
+function realodProgram(): void {
   const filesToLocalStorage = localStorage.getItem("taskKey");
 
   if (filesToLocalStorage) {

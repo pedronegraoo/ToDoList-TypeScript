@@ -17,6 +17,7 @@ function getValueInput() {
     else if (validateDuoTask(store)) {
         alert(`Já existe essa tarefa`);
         inputTask.value = "";
+        inputTask.focus();
     }
     else {
         let tasks = {
@@ -26,6 +27,7 @@ function getValueInput() {
         store.push(tasks);
         addTask(store);
         inputTask.value = "";
+        inputTask.focus();
     }
 }
 inputTask.addEventListener("click", () => {
@@ -36,6 +38,7 @@ function validateDuoTask(store) {
     let find = store.find((element) => element.li === inputTask.value);
     return find ? true : false;
 }
+// ADICIONAR TAREFA NA TELA
 function addTask(store) {
     let task = "";
     store.forEach((item, index) => {
